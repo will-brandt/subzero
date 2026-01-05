@@ -1,0 +1,31 @@
+---
+const { title = "Sub Zero" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/tryouts">Tryouts</a>
+        <a href="/about">About</a>
+        <a href="/team">Team</a>
+
+        <span style="margin-left:auto">
+          <a href="https://instagram.com/" target="_blank">IG</a>
+          <a href="https://youtube.com/" target="_blank">YT</a>
+          <a href="https://twitter.com/" target="_blank">X</a>
+        </span>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
