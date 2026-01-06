@@ -1,0 +1,20 @@
+---
+import Home from "../layouts/Home.astro";
+---
+
+<Home title="Internal | Sub Zero">
+  <div id="protected" style="display:none;">
+    <h1>Internal</h1>
+    <p>Team Links.</p>
+  </div>
+
+  <script>
+    const pass = prompt("Enter team password:");
+
+    if (pass === "subzero") {
+      document.getElementById("protected")!.style.display = "block";
+    } else {
+      window.location.href = "/";
+    }
+  </script>
+</Home>
