@@ -6,7 +6,7 @@ const { title = "Sub Zero" } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
-    <link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="stylesheet" href="/styles/global.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,11 +18,7 @@ const { title = "Sub Zero" } = Astro.props;
     <header>
       <nav class="nav">
         <a href="/" class="brand">
-          <img
-            src={"/src/assets/subzero.webp"}
-            alt="Sub Zero"
-            class="nav-logo"
-          />
+          <img src={"/assets/subzero.webp"} alt="Sub Zero" class="nav-logo" />
           <span>Sub Zero</span>
         </a>
         <a href="/team">Team</a>
@@ -36,7 +32,7 @@ const { title = "Sub Zero" } = Astro.props;
           >
           <a href="https://instagram.com/subzerofrisbee">
             <img
-              src={"/src/assets/ig.jpg"}
+              src={"/assets/ig.jpg"}
               alt="Instagram"
               width="40"
               height="40"
