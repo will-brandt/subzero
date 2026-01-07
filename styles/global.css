@@ -171,4 +171,14 @@ nav span a {
   border-radius: 12px;
 }
 
+.coming-soon-link {
+  color: inherit;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.coming-soon-link:hover {
+  opacity: 0.75;
+}
+
 
