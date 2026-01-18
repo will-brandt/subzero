@@ -181,4 +181,16 @@ nav span a {
   opacity: 0.75;
 }
 
+.history {
+  max-width: 1400px;
+  margin-top: 6rem;
+}
+
+.history p {
+  line-height: 1.9;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
 
