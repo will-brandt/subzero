@@ -182,12 +182,12 @@ nav span a {
 }
 
 .history {
-  max-width: 1400px;
-  margin-top: 6rem;
+  max-width: 1150px;
+  margin: 3rem auto 0 auto;
 }
 
 .history p {
-  line-height: 1.9;
+  line-height: 1.8;
   margin-bottom: 1rem;
   font-size: 1.05rem;
   text-align: center;
