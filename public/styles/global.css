@@ -171,4 +171,26 @@ nav span a {
   border-radius: 12px;
 }
 
+.coming-soon-link {
+  color: inherit;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.coming-soon-link:hover {
+  opacity: 0.75;
+}
+
+.history {
+  max-width: 1150px;
+  margin: 3rem auto 0 auto;
+}
+
+.history p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
 
