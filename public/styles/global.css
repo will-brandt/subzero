@@ -26,7 +26,7 @@ body {
 }
 
 main {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 3rem 2rem;
 }
@@ -193,4 +193,34 @@ nav span a {
   text-align: center;
 }
 
+.form-section {
+  margin-top: 3rem;
+  width: 100%;
+}
 
+.form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.form-header h2 {
+  margin: 0;
+}
+
+.form-open {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.form-open:hover {
+  color: var(--text);
+}
+
+.form-embed {
+  width: 100%;
+  height: 1000px;
+  border: none;
+}
