@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><title>Minneapolis Sub Zero</title><link rel="icon" type="image/webp" href="/assets/favicon.webp"><link rel="stylesheet" href="/styles/global.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4a193a46be5746789f408a936b7e6be2&quot;}"></script><!-- End Cloudflare Web Analytics --></head> <body> <header> <nav class="nav"> <a href="/" class="brand"> <img src="/assets/subzero.webp" alt="Sub Zero" class="nav-logo"> <span>Sub Zero</span> </a> <a href="/team">Team</a> <a href="/tryouts">Tryouts</a> <!-- <a href="/about">About</a> --> <a href="/internal">Internal</a> <div class="nav-right"> <a href="mailto:subzerocaptains@gmail.com" class="contact-link">Contact Us</a> <a href="https://instagram.com/subzerofrisbee"> <img src="/assets/ig.jpg" alt="Instagram" width="40" height="40"> </a> </div> </nav> </header> <main>  <h1>Minneapolis Sub Zero</h1> <section class="about"> <p>
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><title>Minneapolis Sub Zero</title><link rel="icon" type="image/webp" href="/assets/favicon.webp"><link rel="stylesheet" href="/styles/global.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet"><!-- Cloudflare Web Analytics --><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;4a193a46be5746789f408a936b7e6be2&quot;}"></script><!-- End Cloudflare Web Analytics --></head> <body> <header> <nav class="nav"> <a href="/" class="brand"> <img src="/assets/subzero.webp" alt="Minneapolis Sub Zero" class="nav-logo"> <span class="brand-copy"> Minneapolis Sub Zero </span> </a> <div class="nav-links"> <a href="/team">Team</a> <a href="/tryouts">Tryouts</a> <a href="/internal">Internal</a> </div> <div class="nav-right"> <a href="mailto:subzerocaptains@gmail.com" class="contact-link">Contact Us</a> <a href="https://instagram.com/subzerofrisbee"> <img src="/assets/ig.jpg" alt="Instagram" width="40" height="40"> </a> </div> </nav> </header> <main>  <section class="hero reveal-on-scroll"> <div class="hero-copy"> <h1>Minneapolis Sub Zero</h1> <div class="hero-tagline">stay frosty</div> </div> </section> <section class="about reveal-on-scroll"> <p>
 Founded in Minneapolis in 1997, Sub Zero has emerged as the premier men's
       club ultimate team in the state of Minnesota. Throughout the years, we
       have competed on both national and international stages. We compete in the
@@ -11,7 +11,7 @@ Every spring, our team hosts tryouts where hundreds of players compete to
       community, current college players, and graduates from regional programs
       including Carleton College, St. Olaf College, the University of Minnesota,
       and the University of Wisconsin–Madison.
-</p> </section> <div class="photo-grid"> <img src="/assets/nationals.jpeg" alt="Nationals"> <img src="/assets/regionals.jpeg" alt="Regionals"> <img src="/assets/pec.jpeg" alt="PEC"> <img src="/assets/2023nationals.jpeg" alt="2023 Nationals"> </div> <section class="history"> <p>
+</p> </section> <div class="photo-grid reveal-on-scroll"> <img src="/assets/nationals.jpeg" alt="Nationals"> <img src="/assets/regionals.jpeg" alt="Regionals"> <img src="/assets/pec.jpeg" alt="PEC"> <img src="/assets/2023nationals.jpeg" alt="2023 Nationals"> </div> <section class="history reveal-on-scroll"> <p>
 In High School, Gary played tennis and soccer; Steve ran track, mainly the
       400. One from a small Iowa city, the other from southern Wisconsin, this
       dynamic duo met in the dorms of their small Minnesota college freshman
@@ -37,4 +37,83 @@ In High School, Gary played tennis and soccer; Steve ran track, mainly the
       they created flourish. They live on though. You see Gary and Steve on
       every Sub Zero jersey and disc. That’s right! The feared Snowmen that now
       serve as our logo are none other than the two true founding members of Sub
-      Zero. <br> <b>Steve is the one on the right.</b> </p> </section>  </main> </body></html>
+      Zero. <br> <b>Steve is the one on the right.</b> </p> </section>  </main> <script type="module">
+      import anime, { onScroll } from "animejs";
+
+      const header = document.querySelector("header");
+      const brand = document.querySelector(".brand");
+      const navLinks = document.querySelectorAll(".nav-links a");
+      const heroTitle = document.querySelector("h1");
+      const revealTargets = document.querySelectorAll(".reveal-on-scroll");
+      const galleryImages = document.querySelectorAll(".photo-grid img");
+
+      anime
+        .timeline({
+          easing: "easeOutExpo",
+          duration: 700,
+        })
+        .add({
+          targets: header,
+          opacity: [0, 1],
+          translateY: [-32, 0],
+        })
+        .add(
+          {
+            targets: brand,
+            opacity: [0, 1],
+            translateY: [-18, 0],
+          },
+          "-=620"
+        )
+        .add(
+          {
+            targets: navLinks,
+            opacity: [0, 1],
+            translateY: [-18, 0],
+            delay: anime.stagger(80),
+          },
+          "-=620"
+        )
+        .add(
+          {
+            targets: heroTitle,
+            opacity: [0, 1],
+            translateY: [32, 0],
+            scale: [0.96, 1],
+          },
+          "-=520"
+        );
+
+      revealTargets.forEach((element) => {
+        element.style.opacity = 0;
+        element.style.transform = "translateY(24px)";
+        anime({
+          targets: element,
+          opacity: [0, 1],
+          translateY: [24, 0],
+          duration: 700,
+          easing: "easeOutExpo",
+          delay: anime.stagger(90),
+          autoplay: onScroll({ threshold: 0.24 }),
+        });
+      });
+
+      anime({
+        targets: galleryImages,
+        opacity: [0, 1],
+        translateY: [28, 0],
+        scale: [0.98, 1],
+        delay: anime.stagger(120),
+        easing: "easeOutExpo",
+        duration: 700,
+      });
+
+      anime({
+        targets: "body",
+        backgroundPosition: ["0% 0%", "0% 6%"],
+        duration: 16000,
+        easing: "linear",
+        direction: "alternate",
+        loop: true,
+      });
+    </script> </body> </html>
