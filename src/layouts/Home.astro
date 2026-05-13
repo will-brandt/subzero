@@ -11,7 +11,7 @@ const { title = "Sub Zero" } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Bebas+Neue&display=swap"
       rel="stylesheet"
     />
 
@@ -26,13 +26,19 @@ const { title = "Sub Zero" } = Astro.props;
     <header>
       <nav class="nav">
         <a href="/" class="brand">
-          <img src={"/assets/subzero.webp"} alt="Sub Zero" class="nav-logo" />
-          <span>Sub Zero</span>
+          <img
+            src={"/assets/subzero.webp"}
+            alt="Minneapolis Sub Zero"
+            class="nav-logo"
+          />
+          <span class="brand-copy"> Minneapolis Sub Zero </span>
         </a>
-        <a href="/team">Team</a>
-        <a href="/tryouts">Tryouts</a>
-        <!-- <a href="/about">About</a> -->
-        <a href="/internal">Internal</a>
+
+        <div class="nav-links">
+          <a href="/team">Team</a>
+          <a href="/tryouts">Tryouts</a>
+          <a href="/internal">Internal</a>
+        </div>
 
         <div class="nav-right">
           <a href="mailto:subzerocaptains@gmail.com" class="contact-link"
@@ -53,5 +59,86 @@ const { title = "Sub Zero" } = Astro.props;
     <main>
       <slot />
     </main>
+
+    <script type="module">
+      import anime, { onScroll } from "animejs";
+
+      const header = document.querySelector("header");
+      const brand = document.querySelector(".brand");
+      const navLinks = document.querySelectorAll(".nav-links a");
+      const heroTitle = document.querySelector("h1");
+      const revealTargets = document.querySelectorAll(".reveal-on-scroll");
+      const galleryImages = document.querySelectorAll(".photo-grid img");
+
+      anime
+        .timeline({
+          easing: "easeOutExpo",
+          duration: 700,
+        })
+        .add({
+          targets: header,
+          opacity: [0, 1],
+          translateY: [-32, 0],
+        })
+        .add(
+          {
+            targets: brand,
+            opacity: [0, 1],
+            translateY: [-18, 0],
+          },
+          "-=620"
+        )
+        .add(
+          {
+            targets: navLinks,
+            opacity: [0, 1],
+            translateY: [-18, 0],
+            delay: anime.stagger(80),
+          },
+          "-=620"
+        )
+        .add(
+          {
+            targets: heroTitle,
+            opacity: [0, 1],
+            translateY: [32, 0],
+            scale: [0.96, 1],
+          },
+          "-=520"
+        );
+
+      revealTargets.forEach((element) => {
+        element.style.opacity = 0;
+        element.style.transform = "translateY(24px)";
+        anime({
+          targets: element,
+          opacity: [0, 1],
+          translateY: [24, 0],
+          duration: 700,
+          easing: "easeOutExpo",
+          delay: anime.stagger(90),
+          autoplay: onScroll({ threshold: 0.24 }),
+        });
+      });
+
+      anime({
+        targets: galleryImages,
+        opacity: [0, 1],
+        translateY: [28, 0],
+        scale: [0.98, 1],
+        delay: anime.stagger(120),
+        easing: "easeOutExpo",
+        duration: 700,
+      });
+
+      anime({
+        targets: "body",
+        backgroundPosition: ["0% 0%", "0% 6%"],
+        duration: 16000,
+        easing: "linear",
+        direction: "alternate",
+        loop: true,
+      });
+    </script>
   </body>
 </html>

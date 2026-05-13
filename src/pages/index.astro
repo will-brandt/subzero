@@ -3,9 +3,14 @@ import Home from "../layouts/Home.astro";
 ---
 
 <Home title="Minneapolis Sub Zero">
-  <h1>Minneapolis Sub Zero</h1>
+  <section class="hero reveal-on-scroll">
+    <div class="hero-copy">
+      <h1>Minneapolis Sub Zero</h1>
+      <div class="hero-tagline">stay frosty</div>
+    </div>
+  </section>
 
-  <section class="about">
+  <section class="about reveal-on-scroll">
     <p>
       Founded in Minneapolis in 1997, Sub Zero has emerged as the premier men's
       club ultimate team in the state of Minnesota. Throughout the years, we
@@ -24,14 +29,14 @@ import Home from "../layouts/Home.astro";
     </p>
   </section>
 
-  <div class="photo-grid">
+  <div class="photo-grid reveal-on-scroll">
     <img src={"/assets/nationals.jpeg"} alt="Nationals" />
     <img src={"/assets/regionals.jpeg"} alt="Regionals" />
     <img src={"/assets/pec.jpeg"} alt="PEC" />
     <img src={"/assets/2023nationals.jpeg"} alt="2023 Nationals" />
   </div>
 
-  <section class="history">
+  <section class="history reveal-on-scroll">
     <p>
       In High School, Gary played tennis and soccer; Steve ran track, mainly the
       400. One from a small Iowa city, the other from southern Wisconsin, this
